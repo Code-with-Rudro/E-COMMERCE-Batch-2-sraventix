@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopVibe — Modern E-Commerce Store</title>
+  <meta name="description" content="Shop the latest electronics, fashion, home goods, books and sports gear at ShopVibe." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══════════════════ NAVBAR ══════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">⚡</span>ShopVibe
+    </a>
+
+    <div class="nav-search-wrap">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search products, brands…"
+          autocomplete="off"
+          aria-label="Search products"
+        />
+        <button id="clearSearch" class="clear-search-btn" style="display:none" aria-label="Clear search">✕</button>
+      </div>
+    </div>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="cart.html" class="nav-link cart-link">
+        Cart
+        <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+      </a>
+    </nav>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-search-wrap">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="mobileSearchInput" class="search-input" placeholder="Search…" autocomplete="off" />
+      </div>
+    </div>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="cart.html" class="mobile-nav-link">Cart <span class="cart-badge"></span></a>
+  </div>
+</header>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero" aria-label="Hero banner">
+  <div class="hero-inner container">
+    <div class="hero-text">
+      <span class="hero-eyebrow">New arrivals · Summer 2025</span>
+      <h1 class="hero-headline">
+        Find What<br />
+        <em>Moves You.</em>
+      </h1>
+      <p class="hero-sub">Electronics, fashion, books & more — curated picks at prices that make sense.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary hero-cta">Shop Now</a>
+        <a href="cart.html" class="btn-ghost">View Cart</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-blob"></div>
+      <div class="hero-card-float card-float-1">
+        <span>📱</span><span>Phones</span>
+      </div>
+      <div class="hero-card-float card-float-2">
+        <span>💻</span><span>Laptops</span>
+      </div>
+      <div class="hero-card-float card-float-3">
+        <span>👟</span><span>Fashion</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FILTER BAR ══════════════════ -->
+<section class="filter-section" id="products">
+  <div class="container">
+    <div class="filter-header">
+      <h2 class="section-title">All Products</h2>
+      <div class="filter-header-right">
+        <span id="productCount" class="product-count"></span>
+        <button class="btn-ghost-sm" id="filterToggleBtn">⚙ Filters</button>
+        <select id="sortSelect" class="sort-select" aria-label="Sort products">
+          <option value="default">Sort: Featured</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="rating">Top Rated</option>
+          <option value="discount">Biggest Discount</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Filter panel -->
+    <div class="filter-panel" id="filterPanel">
+      <!-- Categories -->
+      <div class="filter-group">
+        <span class="filter-group-label">Category</span>
+        <div class="filter-chips" id="filterChips">
+          <!-- Dynamically filled by filter.js -->
+        </div>
+      </div>
+
+      <!-- Price slider -->
+      <div class="filter-group">
+        <span class="filter-group-label">
+          Max Price: <strong id="priceLabel">Any price</strong>
+        </span>
+        <input
+          type="range"
+          id="priceRange"
+          class="price-slider"
+          min="0"
+          max="100000"
+          value="100000"
+          step="500"
+          aria-label="Maximum price filter"
+        />
+      </div>
+
+      <!-- Reset -->
+      <button class="btn-ghost-sm reset-btn" onclick="resetAll()">↺ Reset</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PRODUCT GRID ══════════════════ -->
+<main class="products-section">
+  <div class="container">
+    <div class="product-grid" id="productGrid" role="list" aria-label="Product listing">
+      <!-- Filled by display.js -->
+    </div>
+  </div>
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">⚡ShopVibe</a>
+      <p>Your go-to store for everything modern.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Shop</h4>
+      <a href="#">Electronics</a>
+      <a href="#">Fashion</a>
+      <a href="#">Home & Kitchen</a>
+      <a href="#">Books</a>
+    </div>
+    <div class="footer-links">
+      <h4>Help</h4>
+      <a href="#">Returns & Refunds</a>
+      <a href="#">Track Order</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ShopVibe. Built by Team: Rudro · Kiran · Sathwik · Uday · Pramod</span>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+<!-- Scripts — ORDER MATTERS -->
+<script src="js/utils.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/search.js"></script>
+<script src="js/display.js"></script>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  mobileMenuBtn?.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
+    mobileMenuBtn.textContent = mobileNav.classList.contains("open") ? "✕" : "☰";
+  });
+
+  // Sync mobile search with desktop search
+  document.getElementById("mobileSearchInput")?.addEventListener("input", (e) => {
+    const desktopInput = document.getElementById("searchInput");
+    if (desktopInput) desktopInput.value = e.target.value;
+    window.currentSearch = e.target.value;
+    applySearch();
+  });
+
+  // Sticky navbar shadow on scroll
+  window.addEventListener("scroll", () => {
+    document.getElementById("navbar")?.classList.toggle("scrolled", window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>
