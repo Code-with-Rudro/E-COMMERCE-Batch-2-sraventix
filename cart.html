@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart — ShopVibe</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══════════════════ NAVBAR ══════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">⚡</span>ShopVibe
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="cart.html" class="nav-link active cart-link">
+        Cart
+        <span class="cart-badge" style="display:none">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════ PAGE HEADER ══════════════════ -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Cart</span>
+    </nav>
+    <h1 class="page-title">Shopping Cart</h1>
+  </div>
+</div>
+
+<!-- ══════════════════ CART CONTENT ══════════════════ -->
+<main class="cart-main container">
+  <div class="cart-layout">
+
+    <!-- Left: Cart Items -->
+    <div class="cart-items-col">
+      <div class="cart-items-header">
+        <h2>Items in your cart</h2>
+        <button
+          id="clearCartBtn"
+          class="btn-danger-sm"
+          onclick="clearCart()"
+          style="display:none"
+        >
+          🗑 Clear All
+        </button>
+      </div>
+
+      <!-- Filled by cart.js → renderCartPage() -->
+      <div id="cartItemsContainer"></div>
+    </div>
+
+    <!-- Right: Order Summary -->
+    <aside class="cart-summary-col" id="cartSummaryPanel" style="display:none">
+      <div class="summary-card">
+        <h2 class="summary-title">Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Items</span>
+          <span id="summaryItems">—</span>
+        </div>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="summarySubtotal">—</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="summaryShipping" class="shipping-tag">—</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (GST ~3%)</span>
+          <span id="summaryTax">—</span>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="summaryTotal" class="total-price">—</span>
+        </div>
+
+        <p class="free-shipping-note">
+          🚚 Free shipping on orders above ₹1,000
+        </p>
+
+        <a href="checkout.html" class="btn-primary full-width checkout-cta">
+          Proceed to Checkout →
+        </a>
+        <a href="index.html" class="btn-outline full-width continue-cta">
+          ← Continue Shopping
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="trust-badges">
+        <div class="trust-badge"><span>🔒</span><span>Secure Checkout</span></div>
+        <div class="trust-badge"><span>↩</span><span>Easy Returns</span></div>
+        <div class="trust-badge"><span>🏷</span><span>Best Price</span></div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <span>© 2025 ShopVibe. Cart page by Sathwik.</span>
+  </div>
+</footer>
+
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/utils.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  window.addEventListener("scroll", () => {
+    document.getElementById("navbar")?.classList.toggle("scrolled", window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>
