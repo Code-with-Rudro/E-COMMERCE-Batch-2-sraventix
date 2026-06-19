@@ -346,31 +346,31 @@ Open With Live Server
 
 ## 🏠 Home Page
 
-```markdown
+```
 <img src="https://i.ibb.co/GfkbHQQg/Screenshot-2026-06-19-112759.png" alt="Home Page" width="800">
 ```
 
 ## 🔍 Product Search & Filter
 
-```markdown
+```
 ![Search & Filter](https://i.ibb.co/0w4PM01/Screenshot-2026-06-19-112956.png)
 ```
 
 ## 🛒 Shopping Cart
 
-```markdown
+```
 ![Cart Page](https://i.ibb.co/Zz6GT8Q1/Screenshot-2026-06-19-112821.png)
 ```
 
 ## 💳 Checkout Page
 
-```markdown
+```
 ![Checkout Page](https://i.ibb.co/20jW2Pcf/Screenshot-2026-06-19-112907.png)
 ```
 
 ## ✅ Order Success Popup
 
-```markdown
+```
 ![Order Success](https://i.ibb.co/SDJntcK8/Screenshot-2026-06-19-112924.png)
 ```
 
