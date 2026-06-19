@@ -347,7 +347,7 @@ Open With Live Server
 ## 🏠 Home Page
 
 ```markdown
-<img src="https://github.com/Code-with-Rudro/E-COMMERCE-Batch-2-sraventix/blob/f0e60eecb0cfbca24faed2b23cf1889b65c78bbf/home-page.png" alt="Home Page" width="800">
+<img src="https://github.com/Code-with-Rudro/E-COMMERCE-Batch-2-sraventix/blob/main/home-page.png?raw=true" alt="Home Page" width="800">
 ```
 
 ## 🔍 Product Search & Filter
