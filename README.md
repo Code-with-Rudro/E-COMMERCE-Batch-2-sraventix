@@ -347,31 +347,31 @@ Open With Live Server
 ## 🏠 Home Page
 
 ```markdown
-![image alt](https://github.com/Code-with-Rudro/E-COMMERCE-Batch-2-sraventix/blob/8515646178e91bc05fb96b32e2d4f2077271a768/Screenshot%202026-06-19%20112759.png)
+![Home Page](home-page.png)
 ```
 
 ## 🔍 Product Search & Filter
 
 ```markdown
-![Search & Filter](screenshots/search-filter.png)
+![Search & Filter](search-filter.png)
 ```
 
 ## 🛒 Shopping Cart
 
 ```markdown
-![Cart Page](screenshots/cart-page.png)
+![Cart Page](cart-page.png)
 ```
 
 ## 💳 Checkout Page
 
 ```markdown
-![Checkout Page](screenshots/checkout-page.png)
+![Checkout Page](checkout-page.png)
 ```
 
 ## ✅ Order Success Popup
 
 ```markdown
-![Order Success](screenshots/order-success.png)
+![Order Success](order-success.png)
 ```
 
 ---
