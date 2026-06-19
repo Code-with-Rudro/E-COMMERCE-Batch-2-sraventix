@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — ShopVibe</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══════════════════ NAVBAR ══════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">⚡</span>ShopVibe
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="cart.html" class="nav-link cart-link">
+        Cart
+        <span class="cart-badge" style="display:none">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════ PAGE HEADER ══════════════════ -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="cart.html">Cart</a>
+      <span>/</span>
+      <span>Checkout</span>
+    </nav>
+    <h1 class="page-title">Secure Checkout</h1>
+  </div>
+</div>
+
+<!-- ══════════════════ EMPTY CART MESSAGE ══════════════════ -->
+<div id="checkoutEmptyMsg" class="container checkout-empty" style="display:none">
+  <div class="empty-cart">
+    <div class="empty-cart-icon">🛒</div>
+    <h2>Your cart is empty</h2>
+    <p>You need to add items before checking out.</p>
+    <a href="index.html" class="btn-primary">Browse Products</a>
+  </div>
+</div>
+
+<!-- ══════════════════ CHECKOUT LAYOUT ══════════════════ -->
+<main class="checkout-main container" id="checkoutFormSection">
+  <div class="checkout-layout">
+
+    <!-- Left: Form -->
+    <div class="checkout-form-col">
+      <form id="checkoutForm" novalidate>
+
+        <!-- Step 1: Contact Info -->
+        <fieldset class="form-fieldset">
+          <legend class="fieldset-legend">
+            <span class="step-num">1</span> Contact Information
+          </legend>
+
+          <div class="form-group">
+            <label for="fullName" class="form-label">Full Name *</label>
+            <input
+              type="text"
+              id="fullName"
+              class="form-input"
+              placeholder="e.g. Rudro Banerjee"
+              autocomplete="name"
+              required
+            />
+            <span class="field-error" id="fullNameError"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                class="form-input"
+                placeholder="10-digit mobile number"
+                autocomplete="tel"
+                maxlength="10"
+                required
+              />
+              <span class="field-error" id="phoneError"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Step 2: Delivery Address -->
+        <fieldset class="form-fieldset">
+          <legend class="fieldset-legend">
+            <span class="step-num">2</span> Delivery Address
+          </legend>
+
+          <div class="form-group">
+            <label for="address" class="form-label">Street Address *</label>
+            <textarea
+              id="address"
+              class="form-input form-textarea"
+              placeholder="House / Flat No., Street, Locality…"
+              rows="3"
+              autocomplete="street-address"
+              required
+            ></textarea>
+            <span class="field-error" id="addressError"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city" class="form-label">City *</label>
+              <input
+                type="text"
+                id="city"
+                class="form-input"
+                placeholder="City"
+                autocomplete="address-level2"
+                required
+              />
+              <span class="field-error" id="cityError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pincode" class="form-label">PIN Code *</label>
+              <input
+                type="text"
+                id="pincode"
+                class="form-input"
+                placeholder="6-digit PIN"
+                maxlength="6"
+                inputmode="numeric"
+                autocomplete="postal-code"
+                required
+              />
+              <span class="field-error" id="pincodeError"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="state" class="form-label">State *</label>
+            <select id="state" class="form-input form-select" autocomplete="address-level1" required>
+              <option value="">— Select State —</option>
+              <option>Andhra Pradesh</option>
+              <option>Arunachal Pradesh</option>
+              <option>Assam</option>
+              <option>Bihar</option>
+              <option>Chhattisgarh</option>
+              <option>Goa</option>
+              <option>Gujarat</option>
+              <option>Haryana</option>
+              <option>Himachal Pradesh</option>
+              <option>Jharkhand</option>
+              <option>Karnataka</option>
+              <option>Kerala</option>
+              <option>Madhya Pradesh</option>
+              <option>Maharashtra</option>
+              <option>Manipur</option>
+              <option>Meghalaya</option>
+              <option>Mizoram</option>
+              <option>Nagaland</option>
+              <option>Odisha</option>
+              <option>Punjab</option>
+              <option>Rajasthan</option>
+              <option>Sikkim</option>
+              <option>Tamil Nadu</option>
+              <option>Telangana</option>
+              <option>Tripura</option>
+              <option>Uttar Pradesh</option>
+              <option>Uttarakhand</option>
+              <option>West Bengal</option>
+              <option>Delhi</option>
+            </select>
+            <span class="field-error" id="stateError"></span>
+          </div>
+        </fieldset>
+
+        <!-- Step 3: Payment -->
+        <fieldset class="form-fieldset">
+          <legend class="fieldset-legend">
+            <span class="step-num">3</span> Payment Method
+          </legend>
+
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="cod" />
+              <div class="payment-option-body">
+                <span class="payment-icon">💵</span>
+                <div>
+                  <strong>Cash on Delivery</strong>
+                  <small>Pay when your order arrives</small>
+                </div>
+              </div>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="upi" />
+              <div class="payment-option-body">
+                <span class="payment-icon">📱</span>
+                <div>
+                  <strong>UPI</strong>
+                  <small>GPay, PhonePe, Paytm &amp; more</small>
+                </div>
+              </div>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="card" />
+              <div class="payment-option-body">
+                <span class="payment-icon">💳</span>
+                <div>
+                  <strong>Debit / Credit Card</strong>
+                  <small>Visa, Mastercard, Rupay</small>
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <span class="field-error" id="paymentError"></span>
+
+          <!-- UPI extra field -->
+          <div id="upiSection" class="payment-extra" style="display:none">
+            <label class="form-label">UPI ID</label>
+            <input type="text" class="form-input" placeholder="yourname@bank" />
+          </div>
+
+          <!-- Card extra fields -->
+          <div id="cardSection" class="payment-extra" style="display:none">
+            <div class="form-group">
+              <label class="form-label">Card Number</label>
+              <input type="text" class="form-input" placeholder="•••• •••• •••• ••••" maxlength="19" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Expiry</label>
+                <input type="text" class="form-input" placeholder="MM / YY" maxlength="7" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">CVV</label>
+                <input type="password" class="form-input" placeholder="•••" maxlength="4" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn-primary full-width place-order-btn">
+          🔒 Place Order
+        </button>
+
+        <p class="checkout-note">
+          By placing an order you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+        </p>
+      </form>
+    </div>
+
+    <!-- Right: Order Summary -->
+    <aside class="checkout-summary-col">
+      <div class="summary-card sticky-summary">
+        <h2 class="summary-title">Your Order</h2>
+
+        <ul id="checkoutItemList" class="checkout-item-list"></ul>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="chkSubtotal">—</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="chkShipping">—</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (GST ~3%)</span>
+          <span id="chkTax">—</span>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="chkTotal" class="total-price">—</span>
+        </div>
+
+        <p class="free-shipping-note">🚚 Free shipping on orders above ₹1,000</p>
+
+        <!-- Trust -->
+        <div class="trust-badges">
+          <div class="trust-badge"><span>🔒</span><span>SSL Secured</span></div>
+          <div class="trust-badge"><span>✅</span><span>Verified Store</span></div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ══════════════════ SUCCESS OVERLAY ══════════════════ -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-animation">
+      <div class="checkmark-circle">
+        <span class="checkmark">✓</span>
+      </div>
+    </div>
+    <h2 class="success-title">Order Placed!</h2>
+    <p class="success-sub">Thank you, <strong id="successName"></strong>! 🎉</p>
+
+    <div class="success-detail-row">
+      <span>Order ID</span>
+      <strong id="successOrderId"></strong>
+    </div>
+    <div class="success-detail-row">
+      <span>Confirmation sent to</span>
+      <strong id="successEmail"></strong>
+    </div>
+    <div class="success-detail-row">
+      <span>Amount Charged</span>
+      <strong id="successTotal"></strong>
+    </div>
+
+    <p class="redirect-note">
+      Redirecting to home in <strong id="redirectCountdown">6</strong>s…
+    </p>
+
+    <button id="goHomeBtn" class="btn-primary full-width">Go to Home</button>
+  </div>
+</div>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <span>© 2025 ShopVibe. Checkout page by Uday.</span>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/utils.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+<script>
+  window.addEventListener("scroll", () => {
+    document.getElementById("navbar")?.classList.toggle("scrolled", window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>
